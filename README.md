@@ -20,8 +20,7 @@ python manage.py runserver
 ```
 
 In the case where you get an error of a specific module not available, usually of the form "No module named <module name>" jut copy the error message and google search it. Solution on how to get the specific module should be provided.
+
+ 
   
- Below is an image of the app interface
- ![...](image/img_5)
-  
-  Made with ❤ JellyCodes.
+Made with ❤ JellyCodes.
