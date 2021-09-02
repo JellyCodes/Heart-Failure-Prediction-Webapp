@@ -1,0 +1,83 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<div class="forms">
+    <div style="margin: 50px 40px;">
+        <p>Be sure to complete the form for a successful prediction</p>
+        <hr style="color: #e8e8e8;">
+    </div>
+
+    <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+    
+        <div class="mb-4">
+            <label for="exampleFormControlInput1" class="form-label" style="margin-bottom: 5px;">Age</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="patient's age" name="age">
+        </div>
+    
+        <div class="mb-4">
+            <label style="margin-bottom: 5px;">Anaemia</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="anaemia" id="flexRadioDefault1" value="Yes"> Yes
+            </div>
+            <div class="form-check">         
+                <input class="form-check-input" type="radio" name="anaemia" id="flexRadioDefault1" value="No"> No
+            </div>
+        </div>
+    
+        <div class="mb-4">
+            <label style="margin-bottom: 5px;">Diabetes</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="diabetes" id="flexRadioDefault1" value="Yes"> Yes
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="diabetes" id="flexRadioDefault1" value="No"> No
+            </div>
+        </div>
+    
+        <div class="mb-4">
+            <label style="margin-bottom: 5px;">High Blood Pressure</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="HBP" id="flexRadioDefault1" value="Yes"> Yes
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="HBP" id="flexRadioDefault1" value="No"> No
+            </div>
+        </div>
+    
+        <div class="mb-4">
+            <div class="accordion accordion-flush">
+                <div class="accordion-item accordion-flush">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <div style="margin-left: -17px;">Serum Creatinine</div>
+                    </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Creatinine is a chemical compound left over from energy-producing processes in your muscles. Healthy kidneys filter creatinine out of the blood. Creatinine exits your body as a waste product in urine.</div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 4px;">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="serum creatinine level e.g 4.5" name="serum">
+            </div>
+        </div>
+    
+        <div class="mb-4">
+            <label style="margin-bottom: 5px;">Smoking status</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smoke" id="flexRadioDefault1" value="Yes"> Yes
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smoke" id="flexRadioDefault1" value="No"> No
+            </div>
+        </div>
+    
+        <div style="margin-bottom: 7px; margin-left: 80%;">
+            <button type="submit" class="btn btn-outline-primary">Get Prediction</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %} 
